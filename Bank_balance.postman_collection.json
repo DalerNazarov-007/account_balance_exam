@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "7c1b9b0e-cd1b-49fd-a675-8c6e77573f4e",
+		"name": "Bank_balance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43268308"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJmNWI3NmU2NjcyMGYyNjgwMWIwZSIsImlhdCI6MTc0NzE0MDg2NiwiZXhwIjoxNzQ3MTQxNzY2fQ.-M3kU2l-Bw8h32N230oWz3lNLCGTJ8isCpFMbiLdkK4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fullname",
+									"value": "Daler Nazarov",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "910207073",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "daler1717",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"value": "https://i.pinimg.com/236x/14/e9/1e/14e91e32467d275a67974d75ec3d77ea.jpg",
+									"type": "text"
+								},
+								{
+									"key": "balance",
+									"value": "12800",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJmNWI3NmU2NjcyMGYyNjgwMWIwZSIsImlhdCI6MTc0NzE0MDg2NiwiZXhwIjoxNzQ3MTQxNzY2fQ.-M3kU2l-Bw8h32N230oWz3lNLCGTJ8isCpFMbiLdkK4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "910207073",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "daler1717",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJmNWI3NmU2NjcyMGYyNjgwMWIwZSIsImlhdCI6MTc0NzE0MDg2NiwiZXhwIjoxNzQ3MTQxNzY2fQ.-M3kU2l-Bw8h32N230oWz3lNLCGTJ8isCpFMbiLdkK4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "910207073",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "daler1717",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjRiMzhhN2JhMjYxZGM5MDRlNDExYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzIzNjIxOSwiZXhwIjoxNzQ3MjM4MDE5fQ.lpLwzfP42_d3XfrzCuj35phPELHLvj3XFOx7mZuMAdM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "RussianEdu",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "private",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Join us and learn new things in russian everyday",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/users",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editing password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjRiMzhhN2JhMjYxZGM5MDRlNDExYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzIzNjIxOSwiZXhwIjoxNzQ3MjM4MDE5fQ.lpLwzfP42_d3XfrzCuj35phPELHLvj3XFOx7mZuMAdM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "doniyorbek",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/users/6824b36f3ca3a1681d7189a0",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"users",
+								"6824b36f3ca3a1681d7189a0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Getting all categories",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjRiMWRhZjFlNzNmYWU2NjYwNTFhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ3MjM2OTAyLCJleHAiOjE3NDcyMzg3MDJ9.i6dBKIENpS5AFDCtrauIlQ33adIVeQsg6z0BibZLQm0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Daily wage",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"value": "https://www.deskera.com/blog/content/images/2021/04/featured-image-8.jpg",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "income",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Balance",
+			"item": [
+				{
+					"name": "Adding a transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjQxZDQxMDBkZWFhMDllNDRkYTAwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ3MjM3MzQ5LCJleHAiOjE3NDcyMzkxNDl9.mrm1PC03_A97BDDvauOutSaXApbM35uiwo8i_S5eBkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "income",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "6824b7d2a29bd1cb31cc1bef",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjQxZDQxMDBkZWFhMDllNDRkYTAwZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ3MjM3MzQ5LCJleHAiOjE3NDcyMzkxNDl9.mrm1PC03_A97BDDvauOutSaXApbM35uiwo8i_S5eBkA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "expense",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "6824bdf244adb96345f2e0f9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editing a transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjRiMWRhZjFlNzNmYWU2NjYwNTFhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ3MjM4ODM0LCJleHAiOjE3NDcyNDA2MzR9.a2IfmtvDMKSZuuaYBdiC4fmfU-VRhwhL4LRq0zkvlew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "6000",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "income",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "6824b1daf1e73fae666051ab",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1717/transactions/6824bfecfc9842d8e7d381e1",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"transactions",
+								"6824bfecfc9842d8e7d381e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getting total  balance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjRiMWRhZjFlNzNmYWU2NjYwNTFhYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ3MjM4ODM0LCJleHAiOjE3NDcyNDA2MzR9.a2IfmtvDMKSZuuaYBdiC4fmfU-VRhwhL4LRq0zkvlew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:1717/transactions/totalBalance",
+							"host": [
+								"localhost"
+							],
+							"port": "1717",
+							"path": [
+								"transactions",
+								"totalBalance"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
