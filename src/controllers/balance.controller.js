@@ -1,5 +1,5 @@
 const express = require("express")
-const historyModel = require("../models/history.model")
+const historyModel = require("../routers/history.model")
 const userModel = require("../models/users.model")
 const { transactionUpdateValidation, transactionValidation } = require("../validations/transaction.validation")
 
@@ -30,7 +30,6 @@ async function addTransaction(req, res) {
         return res.status(400).send({message: "Insufficient balance! "})
     }
     type === "income"? user.balance += amount : user.balance -= amount
-    console.log(typeof amount);
     
     await user.save()
     const newTransaction = new historyModel({
@@ -48,11 +47,9 @@ async function editTransaction(req, res){
     if (!transactionToUpdate) {
         return res.status(404).send({message: "Transaction not found!"})
     }
-
     const user = await userModel.findById(req.user.id)
     transactionToUpdate.type === "income" ? user.balance -= transactionToUpdate.amount : user.balance += transactionToUpdate.amount
     type === "income" ? user.balance += amount : user.balance -= amount
-
     await user.save()
     const updatedTransaction = await historyModel.findByIdAndUpdate(transactionId, data, {new: true})
     res.status(200).send({message: "Transaction successfully updated!", updatedTransaction})
